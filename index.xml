@@ -1,0 +1,191 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Aman — Bio</title>
+  <meta name="description" content="Aman — Student & Gamer. Personal bio website.">  <!-- Google Font (works without special setup) -->  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#7c3aed; /* violet */
+      --glass: rgba(255,255,255,0.04);
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,var(--bg),#071021 60%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px 20px;
+      display:flex;align-items:center;justify-content:center;
+    }
+
+    .container{width:100%;max-width:960px}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      padding:28px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    /* left column */
+    .profile{
+      text-align:center;padding:8px;border-radius:10px;background:var(--glass);
+    }
+    .avatar{
+      width:140px;height:140px;border-radius:20px;display:inline-block;overflow:hidden;margin:8px auto;border:1px solid rgba(255,255,255,0.05);
+      background:linear-gradient(135deg,#0b1220,#0b1a2b);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{font-size:20px;margin:10px 0 6px}
+    .sub{color:var(--muted);font-size:13px;margin-bottom:12px}
+    .tags{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+    .tag{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:12px;color:var(--muted)}
+
+    /* right column */
+    .about{line-height:1.6;color:#dbe8ff}
+    .section{margin-bottom:18px}
+    .meta{display:flex;gap:12px;align-items:center}
+    .meta .item{background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;font-size:13px;color:var(--muted);min-width:90px;text-align:center}
+
+    .socials{display:flex;gap:10px}
+    .socials a{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);text-decoration:none;color:inherit;font-size:13px}
+
+    .cta{display:flex;gap:10px;margin-top:12px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#4f46e5);color:white}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    footer{margin-top:12px;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:760px){
+      .card{grid-template-columns:1fr;}
+      .avatar{width:120px;height:120px}
+      body{padding:20px}
+    }
+
+    /* small utility */
+    pre{background:#071022;padding:10px;border-radius:8px;color:var(--muted);overflow:auto}
+
+  </style></head>
+<body>
+  <div class="container">
+    <div class="card">
+      <aside class="profile">
+        <div class="avatar" id="avatar">
+          <!-- Replace src with your photo link or local file -->
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&crop=faces" alt="Aman">
+        </div>
+        <h1 id="name">Aman</h1>
+        <div class="sub">Student · Gamer · Age 19</div><div class="tags">
+      <div class="tag">HTML</div>
+      <div class="tag">CSS</div>
+      <div class="tag">Gaming</div>
+    </div>
+
+    <div style="margin-top:12px">
+      <button class="btn btn-primary" onclick="copyEmail()">Contact</button>
+      <button class="btn btn-outline" onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+  </aside>
+
+  <main>
+    <section class="about section">
+      <h2 style="margin:0 0 8px">About Me</h2>
+      <p id="aboutText">Hi, I'm Aman — a 19-year-old student who loves gaming and building small projects. I learn by doing and love sharing my work online. This is a simple personal bio site you can customize.</p>
+    </section>
+
+    <section class="section">
+      <div class="meta">
+        <div class="item">Location<br><strong>India</strong></div>
+        <div class="item">Status<br><strong>Student</strong></div>
+        <div class="item">Experience<br><strong>Beginner</strong></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3 style="margin:0 0 8px">Socials</h3>
+      <div class="socials">
+        <a href="#" onclick="openLink('https://github.com')">GitHub</a>
+        <a href="#" onclick="openLink('https://twitter.com')">Twitter</a>
+        <a href="#" onclick="openLink('https://instagram.com')">Instagram</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3 style="margin:0 0 8px">Highlights</h3>
+      <ul id="highlights">
+        <li>Student at school/college</li>
+        <li>Discord active gamer</li>
+        <li>Learning web development</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h3 style="margin:0 0 8px">Quick Contact</h3>
+      <p style="margin:0 0 8px">Email: <strong id="email">aman@example.com</strong></p>
+      <div class="cta">
+        <button class="btn btn-primary" onclick="location.href='mailto:aman@example.com'">Email Me</button>
+        <button class="btn btn-outline" onclick="downloadVCard()">Download vCard</button>
+      </div>
+    </section>
+
+    <footer>Made with ❤️ • Simple bio template — edit text & images to personalize.</footer>
+  </main>
+</div>
+
+  </div>  <script>
+    // Small interactive helpers
+    function copyEmail(){
+      const email = document.getElementById('email').innerText;
+      navigator.clipboard?.writeText(email).then(()=>{
+        alert('Email copied: '+email);
+      }).catch(()=>{ alert('Copy failed — '+email); });
+    }
+    function downloadVCard(){
+      const name = document.getElementById('name').innerText;
+      const email = document.getElementById('email').innerText;
+      const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:${name}\nEMAIL:${email}\nEND:VCARD`;
+      const blob = new Blob([vcard], {type:'text/vcard'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = name.replace(/\s+/g,'_')+'.vcf'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    }
+    function openLink(url){ window.open(url,'_blank'); }
+
+    // Optional theme toggle (simple)
+    let dark=true;
+    function toggleTheme(){
+      if(dark){
+        document.documentElement.style.setProperty('--bg','#f6f8fb');
+        document.documentElement.style.setProperty('--card','#ffffff');
+        document.documentElement.style.setProperty('--muted','#475569');
+        document.documentElement.style.setProperty('--accent','#7c3aed');
+        document.body.style.color='#0b1220';
+      } else {
+        document.documentElement.style.setProperty('--bg','#0f1724');
+        document.documentElement.style.setProperty('--card','#0b1220');
+        document.documentElement.style.setProperty('--muted','#94a3b8');
+        document.body.style.color='#e6eef8';
+      }
+      dark = !dark;
+    }
+
+    // Lightweight personalization: try reading query params
+    (function personalize(){
+      const params = new URLSearchParams(location.search);
+      if(params.get('name')) document.getElementById('name').innerText = params.get('name');
+      if(params.get('about')) document.getElementById('aboutText').innerText = params.get('about');
+      if(params.get('email')) document.getElementById('email').innerText = params.get('email');
+    })();
+  </script></body>
+</html>
